@@ -1,0 +1,99 @@
+=================================================================
+SMART CONNECTION FEASIBILITY PREDICTOR — ML EVALUATION REPORT
+=================================================================
+
+Dataset : D:\ADS\airconnex\airconnex\preprocessing1.csv
+Rows    : 2,499
+Features: 32
+
+Target classes: 0=Risky | 1=Tight | 2=Safe
+
+───────────────────────────────────────────────────────
+MODEL: Random Forest (Unscaled)
+───────────────────────────────────────────────────────
+  CV Accuracy  : 0.9314 ± 0.0173
+  CV F1-Macro  : 0.9258 ± 0.0193
+  Test Accuracy: 0.9120
+  Test F1-Macro: 0.9071
+  Test F1-Wtd  : 0.9108
+
+  Confusion Matrix:
+                Risky    Tight     Safe
+  Risky           139       11        0
+  Tight            10      122       18
+  Safe              0        5      195
+
+  Classification Report:
+                  precision    recall  f1-score   support
+    
+           Risky     0.9329    0.9267    0.9298       150
+           Tight     0.8841    0.8133    0.8472       150
+            Safe     0.9155    0.9750    0.9443       200
+    
+        accuracy                         0.9120       500
+       macro avg     0.9108    0.9050    0.9071       500
+    weighted avg     0.9113    0.9120    0.9108       500
+
+───────────────────────────────────────────────────────
+MODEL: Random Forest (Scaled)
+───────────────────────────────────────────────────────
+  CV Accuracy  : 0.9324 ± 0.0182
+  CV F1-Macro  : 0.9268 ± 0.0201
+  Test Accuracy: 0.9120
+  Test F1-Macro: 0.9071
+  Test F1-Wtd  : 0.9108
+
+  Confusion Matrix:
+                Risky    Tight     Safe
+  Risky           139       11        0
+  Tight            10      122       18
+  Safe              0        5      195
+
+  Classification Report:
+                  precision    recall  f1-score   support
+    
+           Risky     0.9329    0.9267    0.9298       150
+           Tight     0.8841    0.8133    0.8472       150
+            Safe     0.9155    0.9750    0.9443       200
+    
+        accuracy                         0.9120       500
+       macro avg     0.9108    0.9050    0.9071       500
+    weighted avg     0.9113    0.9120    0.9108       500
+
+───────────────────────────────────────────────────────
+MODEL: XGBoost (Scaled)
+───────────────────────────────────────────────────────
+  CV Accuracy  : 0.9590 ± 0.0128
+  CV F1-Macro  : 0.9560 ± 0.0138
+  Test Accuracy: 0.9560
+  Test F1-Macro: 0.9549
+  Test F1-Wtd  : 0.9559
+
+  Confusion Matrix:
+                Risky    Tight     Safe
+  Risky           145        5        0
+  Tight             3      138        9
+  Safe              0        5      195
+
+  Classification Report:
+                  precision    recall  f1-score   support
+    
+           Risky     0.9797    0.9667    0.9732       150
+           Tight     0.9324    0.9200    0.9262       150
+            Safe     0.9559    0.9750    0.9653       200
+    
+        accuracy                         0.9560       500
+       macro avg     0.9560    0.9539    0.9549       500
+    weighted avg     0.9560    0.9560    0.9559       500
+
+=================================================================
+BEST MODEL: XGBoost (Scaled)
+  Accuracy : 0.9560
+  F1-Macro : 0.9549
+  F1-Wtd   : 0.9559
+
+Saved artefacts:
+  D:\ADS\airconnex\airconnex\ml\model.pkl
+  D:\ADS\airconnex\airconnex\ml\scaler.pkl
+  D:\ADS\airconnex\airconnex\ml\feature_names.json
+=================================================================
